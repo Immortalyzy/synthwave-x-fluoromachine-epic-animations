@@ -111,6 +111,7 @@
 }
 
 
+/*
 .editor-group-container:after {
     animation: flight 2s infinite linear;
 }
@@ -120,6 +121,7 @@
     border-radius: 5px;
     animation: colapse .5s linear;
 }
+*/
 
 
 
@@ -202,7 +204,8 @@
     
 
     text-shadow: 0 0 30px #fc28a8;
-
+}
+/*
     animation: cnt 10s infinite linear;
 
 
@@ -223,3 +226,5 @@
         text-shadow: 0 0 30px #fc28a8;
     }
 }
+
+*/
