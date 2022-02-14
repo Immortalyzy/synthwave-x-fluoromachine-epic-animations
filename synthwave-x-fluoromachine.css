@@ -7,10 +7,12 @@
 .mtk3.mtki {
   font-style: italic;
   color: #9963ff99;
+  text-shadow: 0 0 1px #100c0f, 0 0 1px #f568fa46, 0 0 2px #ff7cf444, 0 0 4px #ff8cff56;
 }
 
 .mtk4, .mtk5, .mtk11, .mtk14 {
   color: #9963ff;
+  text-shadow: 0 0 2px #100c0f, 0 0 2px #f568fa57, 0 0 3px #ff7cf462, 0 0 5px #ff8cff63;
 }
 
 .mtk8, .mtk9 {
@@ -19,6 +21,13 @@
   text-shadow: 0 0 2px #100c0f, 0 0 3px #ffaa0099, 0 0 5px #ffaa0099, 0 0 10px #ffaa0099;
   font-style: italic;
 }
+
+.mtk1 {
+  /* color: #fd8902; */
+  text-shadow: 0 0 2px #100c0f, 0 0 2px #ece6da79, 0 0 3px #f3efe673, 0 0 5px #f1ebde63;
+}
+
+
 
 /* .mtk7 {
   color: #8a2dc0;
