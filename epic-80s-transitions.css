@@ -14,7 +14,9 @@
 
 .mtk8:hover, .mtk9:hover, .mtk3:hover, .mtk6:hover, .mtk7:hover, .mtk10:hover {
     text-shadow: 2 2 15px;
-    transform: scale(1.2);
+    transform: scale(1.0);
+    transition: background-color 2s ease-out;
+    background-color: rgba(58, 83, 78, 0.5);
 }
 
 
