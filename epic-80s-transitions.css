@@ -104,7 +104,8 @@
     background-color: #000000aa!important;
     box-shadow: 0 0 35px 5px #ffeff5; 
     color: #fff!important;
-    animation: cursor_selection 1s infinite linear;
+    border:1px solid #fff;
+    animation: cursor_selection 2s infinite linear;
  }
 
 
@@ -179,8 +180,11 @@
     0% {  
         box-shadow: 0 0 5px 0 #ffeaf2;      
     }
-    100% {  
+    50% {  
         box-shadow: 0 0 35px 5px #ffeaf2;      
+    }
+    100% {  
+        box-shadow: 0 0 5px 0 #ffeaf2;      
     }
 }
 
