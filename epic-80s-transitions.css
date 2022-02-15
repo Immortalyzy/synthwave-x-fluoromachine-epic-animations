@@ -102,8 +102,9 @@
 
 .monaco-editor .selected-text {
     background-color: #000000aa!important;
-    box-shadow: 0 0 35px 5px #ff008d55;
+    box-shadow: 0 0 35px 5px #ffeff5; 
     color: #fff!important;
+    animation: cursor_selection 1s infinite linear;
  }
 
 
@@ -170,7 +171,16 @@
         box-shadow: 0 0 5px 0 #00c3ff;      
     }
     100% {
-        box-shadow: 0 0 35px 5px #00c3ff;
+        box-shadow: 0 0 50px 10px #00c3ff;
+    }
+}
+
+@keyframes cursor_selection {
+    0% {  
+        box-shadow: 0 0 5px 0 #ffeaf2;      
+    }
+    100% {  
+        box-shadow: 0 0 35px 5px #ffeaf2;      
     }
 }
 

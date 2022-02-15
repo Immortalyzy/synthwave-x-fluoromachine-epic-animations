@@ -201,6 +201,7 @@ canvas {
 
 .monaco-inputbox>.wrapper>textarea.input::selection {
   background-color:rgba(255,255,255,0.3);
+  text-shadow: 0 0 2px #fdfdf9, 0 0 5px #f8f3f3c7, 0 0 10px #fefdffc0, 0 0 2px #f9f8fab7;
 }
 
 .monaco-editor .line-numbers {
@@ -229,3 +230,38 @@ canvas {
   opacity: 0.5;
   z-index: 2;
 }
+
+.monaco-editor.vs .redsquiggly,
+.monaco-editor.vs-dark .redsquiggly,
+.monaco-editor.hc-black .redsquiggly{
+  background: rgb(255, 16, 16) !important;
+  border-bottom: 1px solid #fff !important;
+  text-shadow: 0 0 2px #ff4c4c, 0 0 5px #ff4141c7, 0 0 10px #ff4343c0, 0 0 2px #ff5454b7 !important;
+}
+
+.monaco-editor.vs .greensquiggly,
+.monaco-editor.vs-dark .greensquiggly,
+.monaco-editor.hc-black .greensquiggly{
+  background: rgb(84, 255, 16) !important;
+  border-bottom: 1px solid #fff !important;
+  text-shadow: 0 0 2px #ff4c4c, 0 0 5px #ff4141c7, 0 0 10px #ff4343c0, 0 0 2px #ff5454b7 !important;
+}
+
+.monaco-editor.redsquiggly{
+  background-color: rgb(255, 16, 16);
+  border-bottom: 1px solid #fff !important;
+  text-shadow: 0 0 2px #ff4c4c, 0 0 5px #ff4141c7, 0 0 10px #ff4343c0, 0 0 2px #ff5454b7 !important;
+}
+.monaco-editor.greensquiggly{
+  background-color: rgb(84, 255, 16); 
+  border-bottom: 1px solid #fff !important;
+  text-shadow: 0 0 2px #ff4c4c, 0 0 5px #ff4141c7, 0 0 10px #ff4343c0, 0 0 2px #ff5454b7 !important;
+}
+
+.monaco-editor .bracket-match {
+	box-sizing: border-box;
+	background-color: rgba(0, 100, 0, 0.1);
+}
+.monaco-editor.vs		.bracket-match { border: 1px solid #B9B9B9; }
+.monaco-editor.vs-dark	.bracket-match { border: 1px solid #888; }
+.monaco-editor.hc-black .bracket-match { border: 1px solid #fff; }
