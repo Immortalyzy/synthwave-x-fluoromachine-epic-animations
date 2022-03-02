@@ -65,6 +65,8 @@ Windows might resemble:
 }
 ```
 
+3.5. If you want this modified version, folk the directory and change the path in step 3 to match the corresponding files in this directory. 
+
 4. `epic-80s-transitions.css` is optional and brings crazy 80's animations into your VS code!
 5. From the command panel, select `Reload Custom CSS and JS`. You'll need to run this command every time vscode updates.
 
@@ -80,12 +82,6 @@ The font being used in the screenshot above is [Operator Mono with Ligatures](ht
 ## Contibution
 All contributions are welcome, including issues, new docs as well as updates and tweaks, blog posts, workshops, and more.
 
-
-
-<br/><br/>
-
-## Contact
-Write me on <a href="https://twitter.com/chillya">twitter</a>.
 
 
 <br/><br/>
