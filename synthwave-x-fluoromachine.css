@@ -1,7 +1,24 @@
+:root {
+  --sxfm-accent-cyan: #03edf9;
+  --sxfm-accent-pink: #fc28a8;
+  --sxfm-accent-hot-pink: #fc199a;
+  --sxfm-accent-violet: #8a2dc0;
+  --sxfm-panel-bg: #241b2f;
+  --sxfm-editor-margin-bg: #210a33;
+  --sxfm-hover-bg: #262335;
+  --sxfm-overlay-opacity: 0.02;
+  --sxfm-overlay-stripe-size: 4px;
+  --sxfm-tooltip-pulse-duration: 4s;
+  --sxfm-neon-sweep-duration: 2s;
+}
+
 .mtk3,
 .mtk6 {
   color: #61e2ff;
-  text-shadow: 0 0 2px #001716, 0 0 5px #03edf933, 0 0 10px #ffff6633;
+  text-shadow:
+    0 0 2px #001716,
+    0 0 5px #03edf933,
+    0 0 10px #ffff6633;
 }
 
 .mtk3.mtki {
@@ -47,9 +64,12 @@
 
 .mtk7,
 .mtk10 {
-  color: #fc199a;
-  text-shadow: 0 0 2px #393a33, 0 0 35px #ffffff44, 0 0 10px #fc199a,
-    0 0 2px #fc199a;
+  color: var(--sxfm-accent-hot-pink);
+  text-shadow:
+    0 0 2px #393a33,
+    0 0 35px #ffffff44,
+    0 0 10px var(--sxfm-accent-hot-pink),
+    0 0 2px var(--sxfm-accent-hot-pink);
 }
 
 .mtk10 {
@@ -111,6 +131,12 @@
 }
 */
 
+.monaco-editor,
+.editor-group-container {
+  position: relative;
+  isolation: isolate;
+}
+
 /* .monaco-editor > .overflow-guard > .monaco-scrollable-element:before { */
 .monaco-editor:before,
 .editor-group-container:before {
@@ -121,19 +147,21 @@
     #fff 2px,
     #fff 4px
   );
-  background-size: 100% 4px cover;
+  background-size: 100% var(--sxfm-overlay-stripe-size);
   transform-origin: 50% 50%;
   content: "";
-  opacity: 0.02;
+  opacity: var(--sxfm-overlay-opacity);
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
+  pointer-events: none;
+  z-index: 0;
 }
 
 .monaco-editor .overflow-guard .margin {
-  background: #210a33;
+  background: var(--sxfm-editor-margin-bg);
 }
 
 /*
@@ -157,7 +185,7 @@ canvas {
   .monaco-action-bar
   .badge
   .badge-content {
-  background: linear-gradient(to bottom, #fff951 25%, #fc28a8);
+  background: linear-gradient(to bottom, #fff951 25%, var(--sxfm-accent-pink));
 }
 
 .monaco-workbench
@@ -198,8 +226,13 @@ canvas {
   top: 0px;
   left: 0px;
   width: 4px;
-  background: linear-gradient(to bottom, #fc28a8, #03edf9) !important;
+  background: linear-gradient(
+    to bottom,
+    var(--sxfm-accent-pink),
+    var(--sxfm-accent-cyan)
+  ) !important;
   opacity: 1;
+  pointer-events: none;
 }
 
 .monaco-workbench
@@ -215,6 +248,7 @@ canvas {
   width: 0px;
   transition: opacity 1s;
   opacity: 0;
+  pointer-events: none;
 }
 
 /* Active tab neon */
@@ -243,7 +277,12 @@ canvas {
   left: 0;
   right: 0;
   height: 4px;
-  background: linear-gradient(to right, #fc28a8, #03edf9) !important;
+  background: linear-gradient(
+    to right,
+    var(--sxfm-accent-pink),
+    var(--sxfm-accent-cyan)
+  ) !important;
+  pointer-events: none;
 }
 
 /* update lightbulb to be neon */
@@ -254,9 +293,13 @@ canvas {
 }
 
 .monaco-editor .cursor {
-  background: linear-gradient(to bottom, #8a2dc0, #fc28a8);
-  box-shadow: 0 0 5px #fc199a;
-  border-color: #8a2dc0;
+  background: linear-gradient(
+    to bottom,
+    var(--sxfm-accent-violet),
+    var(--sxfm-accent-pink)
+  );
+  box-shadow: 0 0 5px var(--sxfm-accent-hot-pink);
+  border-color: var(--sxfm-accent-violet);
   color: #241b2f;
 }
 
@@ -273,7 +316,7 @@ canvas {
 }
 
 .monaco-list .monaco-list-rows {
-  background: rgba(36, 27, 47) !important;
+  background: var(--sxfm-panel-bg) !important;
 }
 
 .monaco-list-row.focused,
@@ -292,7 +335,11 @@ canvas {
 }
 
 .vs-dark .monaco-scrollable-element > .scrollbar > .slider {
-  background: linear-gradient(to bottom, #8a2dc0, #fc28a8);
+  background: linear-gradient(
+    to bottom,
+    var(--sxfm-accent-violet),
+    var(--sxfm-accent-pink)
+  );
   opacity: 0.7;
   z-index: 2;
 }

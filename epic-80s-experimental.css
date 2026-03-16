@@ -1,0 +1,32 @@
+/* Optional experimental add-on.
+   Import this after epic-80s-transitions.css if you want the older,
+   transform-heavy token hover effect. It may affect Monaco layout on
+   some VS Code builds and is intentionally not part of the safer default layer. */
+
+.mtk8,
+.mtk9,
+.mtk3,
+.mtk6,
+.mtk7,
+.mtk10 {
+  display: inline-block;
+  transform-origin: 50% 70%;
+  transition:
+    transform 0.4s ease,
+    background-color 0.2s ease,
+    text-shadow 0.2s ease;
+  will-change: transform;
+}
+
+.mtk8:hover,
+.mtk9:hover,
+.mtk3:hover,
+.mtk6:hover,
+.mtk7:hover,
+.mtk10:hover {
+  text-shadow:
+    0 0 12px rgba(3, 237, 249, 0.75),
+    0 0 22px rgba(252, 40, 168, 0.45);
+  transform: translateY(-1px) scale(1.02);
+  background-color: rgba(58, 83, 78, 0.5);
+}

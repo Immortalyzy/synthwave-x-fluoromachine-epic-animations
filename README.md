@@ -65,10 +65,19 @@ Windows might resemble:
 }
 ```
 
-3.5. If you want this modified version, folk the directory and change the path in step 3 to match the corresponding files in this directory. 
+If you want the more aggressive, transform-heavy token hover effect, add this third import after `epic-80s-transitions.css`:
 
-4. `epic-80s-transitions.css` is optional and brings crazy 80's animations into your VS code!
-5. From the command panel, select `Reload Custom CSS and JS`. You'll need to run this command every time vscode updates.
+```
+"file:///Users/{your username}/.vscode/extensions/thecodemonkey.synthwave-x-fluoromachine-epic-animations-1.4.13/epic-80s-experimental.css"
+```
+
+That extra file is intentionally experimental and may be less stable on some VS Code builds.
+
+3.5. If you want this modified version, fork the directory and change the path in step 3 to match the corresponding files in this directory. 
+
+4. `epic-80s-transitions.css` is optional and now contains the safer motion layer.
+5. `epic-80s-experimental.css` is an extra opt-in file for the more aggressive token hover behavior.
+6. From the command panel, select `Reload Custom CSS and JS`. You'll need to run this command every time vscode updates.
 
 
 <br/><br/>

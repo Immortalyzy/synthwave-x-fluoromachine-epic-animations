@@ -1,87 +1,131 @@
-@import url('https://fonts.googleapis.com/css2?family=Tourney:ital,wght@1,100&display=swap');
+/* Stable motion layer.
+   The transform-heavy token hover effect now lives in epic-80s-experimental.css. */
 
+/* Paint-only token hover accents */
 
-/* hover flip specials */
-
-
-.mtk8, .mtk9, .mtk3, .mtk6, .mtk7, .mtk10 {
-    display: inline-block;
-    
-    transition: .4s transform;
-    /* transform: rotateX(0); */
+.mtk8,
+.mtk9,
+.mtk3,
+.mtk6,
+.mtk7,
+.mtk10 {
+  border-radius: 2px;
+  transition:
+    color 160ms ease,
+    text-shadow 160ms ease,
+    background-color 160ms ease;
 }
 
-
-.mtk8:hover, .mtk9:hover, .mtk3:hover, .mtk6:hover, .mtk7:hover, .mtk10:hover {
-    text-shadow: 2 2 15px;
-    transform: scale(1.0);
-    transition: background-color 2s ease-out;
-    background-color: rgba(58, 83, 78, 0.5);
+.mtk8:hover,
+.mtk9:hover,
+.mtk3:hover,
+.mtk6:hover,
+.mtk7:hover,
+.mtk10:hover {
+  text-shadow:
+    0 0 6px rgba(3, 237, 249, 0.55),
+    0 0 12px rgba(252, 40, 168, 0.3);
+  background-color: rgba(58, 83, 78, 0.22);
 }
 
-
-/* end of hover flip specials */
-
+/* end of token hover accents */
 
 /* tooltips */
 
 .monaco-editor .monaco-hover {
-    background-color: #262335;
-    display: block!important;
-    padding: 20px;
-    transition: opacity 1s !important;
-    opacity: 1;
-    animation: tooltippulse 4s infinite linear;
+  background-color: var(--sxfm-hover-bg, #262335);
+  box-sizing: border-box;
+  max-width: min(38rem, calc(100vw - 32px));
+  border: 1px solid rgba(252, 40, 168, 0.35);
+  box-shadow:
+    0 0 0 1px rgba(252, 40, 168, 0.08),
+    0 10px 30px rgba(3, 237, 249, 0.12);
+  transition:
+    opacity 250ms ease,
+    box-shadow 300ms ease !important;
+  opacity: 1;
+  animation: tooltippulse var(--sxfm-tooltip-pulse-duration, 4s) infinite linear;
+}
+
+.monaco-editor .monaco-hover .monaco-hover-content,
+.monaco-editor .monaco-hover .hover-row,
+.monaco-editor .monaco-hover .hover-contents,
+.monaco-editor .monaco-hover .markdown-hover,
+.monaco-editor .monaco-hover .rendered-markdown {
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+}
+
+.monaco-editor .monaco-hover .hover-contents,
+.monaco-editor .monaco-hover .markdown-hover,
+.monaco-editor .monaco-hover .rendered-markdown {
+  overflow-wrap: anywhere;
+}
+
+.monaco-editor .monaco-hover pre {
+  max-width: 100%;
+  overflow-x: auto;
 }
 
 .monaco-editor .monaco-hover.hidden {
-    opacity: 0;
+  opacity: 0;
 }
 
 @keyframes tooltippulse {
-    0% {  
-        box-shadow: 0 0 0 0 rgba(255, 0, 242, 0);   
-    }
-    50% {
-        box-shadow: 0 0 85px 0 rgba(0, 217, 255, 0.5);  
-    }
-    100% {
-        box-shadow: 0 0 0 0 rgba(255, 0, 242, 0);
-    }    
+  0% {
+    box-shadow:
+      0 0 0 1px rgba(252, 40, 168, 0.08),
+      0 10px 24px rgba(3, 237, 249, 0.08);
+  }
+  50% {
+    box-shadow:
+      0 0 0 1px rgba(252, 40, 168, 0.18),
+      0 14px 34px rgba(3, 237, 249, 0.2);
+  }
+  100% {
+    box-shadow:
+      0 0 0 1px rgba(252, 40, 168, 0.08),
+      0 10px 24px rgba(3, 237, 249, 0.08);
+  }
 }
 
 .monaco-editor .monaco-hover::after {
-    content: '';
-    position: absolute;
-    bottom: -1px;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background-size: 200% 200%;
-    width: 100%;
-    background-image: linear-gradient(to right, #fc28a8, #03edf9, #fc28a8, #03edf9, #fc28a8);
-
-    animation: neonline 2s infinite;
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 4px;
+  width: 100%;
+  background-image: linear-gradient(
+    to right,
+    var(--sxfm-accent-pink, #fc28a8),
+    var(--sxfm-accent-cyan, #03edf9),
+    var(--sxfm-accent-pink, #fc28a8),
+    var(--sxfm-accent-cyan, #03edf9),
+    var(--sxfm-accent-pink, #fc28a8)
+  );
+  background-size: 200% 200%;
+  pointer-events: none;
+  animation: neonline var(--sxfm-neon-sweep-duration, 2s) infinite linear;
 }
 
 @keyframes neonline {
-    0% {  
-       background-position: 0% 50%;
-    }
-    100% {
-        background-position: 100% 50%;
-    }    
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
 }
 
-
-
 /* end of tooltips */
-
 
 /* tabs */
 
 /* .monaco-workbench .part.editor>.content .editor-group-container>.title .tabs-container>.tab.active::before {
-    
+
     animation: neonline2 2s infinite;
     background-size: 200% 200%!important;
     width: 100%;
@@ -89,31 +133,28 @@
 }
 
 @keyframes neonline2 {
-    0% {  
+    0% {
        background-position: 0% 50%;
     }
     100% {
         background-position: 100% 50%;
-    }    
+    }
 } */
 
 /* end of tabs*/
 
-
 .monaco-editor .selected-text {
-    background-color: #000000aa!important;
-    box-shadow: 0 0 35px 5px #ffeff5; 
-    color: #fff!important;
-    border:1px solid #fff;
-    animation: cursor_selection 2s infinite linear;
- }
-
-
-.monaco-editor .cursor { 
-    box-shadow: 0 0 15px 2px #00c3ff;
-    animation: cursor 1s infinite linear;
+  background-color: #000000aa !important;
+  box-shadow: 0 0 35px 5px #ffeff5;
+  color: #fff !important;
+  border: 1px solid #fff;
+  animation: cursor_selection 2s infinite linear;
 }
 
+.monaco-editor .cursor {
+  box-shadow: 0 0 15px 2px #00c3ff;
+  animation: cursor 1s infinite linear;
+}
 
 /*
 .editor-group-container:after {
@@ -127,15 +168,10 @@
 }
 */
 
-
-
 .monaco-editor .line-numbers.active-line-number {
-    color: turquoise;
-    text-shadow: 0 0 1px yellow!important;
+  color: turquoise;
+  text-shadow: 0 0 1px yellow !important;
 }
-
-
-
 
 /* canvas.minimap-decorations-layer {
     background-color: transparent !important;
@@ -146,46 +182,42 @@
 } */
 
 .monaco-editor .minimap-shadow-visible {
-    box-shadow: none!important;
+  box-shadow: none !important;
 }
 
-
-
-
-
 @keyframes colapse {
-    0% {  
-        background-color:yellow;
-        box-shadow: 0 0 5px 0 yellow;      
-    }
-    70% {
-        background-color: yellow;
-        box-shadow: 0 0 35px 10px yellow;
-    }
-    100% {
-        background-color: transparent;
-    }    
+  0% {
+    background-color: yellow;
+    box-shadow: 0 0 5px 0 yellow;
+  }
+  70% {
+    background-color: yellow;
+    box-shadow: 0 0 35px 10px yellow;
+  }
+  100% {
+    background-color: transparent;
+  }
 }
 
 @keyframes cursor {
-    0% {  
-        box-shadow: 0 0 5px 0 #00c3ff;      
-    }
-    100% {
-        box-shadow: 0 0 50px 10px #00c3ff;
-    }
+  0% {
+    box-shadow: 0 0 5px 0 #00c3ff;
+  }
+  100% {
+    box-shadow: 0 0 50px 10px #00c3ff;
+  }
 }
 
 @keyframes cursor_selection {
-    0% {  
-        box-shadow: 0 0 5px 0 #ffeaf2;      
-    }
-    50% {  
-        box-shadow: 0 0 35px 5px #ffeaf2;      
-    }
-    100% {  
-        box-shadow: 0 0 5px 0 #ffeaf2;      
-    }
+  0% {
+    box-shadow: 0 0 5px 0 #ffeaf2;
+  }
+  50% {
+    box-shadow: 0 0 35px 5px #ffeaf2;
+  }
+  100% {
+    box-shadow: 0 0 5px 0 #ffeaf2;
+  }
 }
 
 @keyframes flight {
@@ -196,8 +228,6 @@
     transform: perspective(100px) rotateX(60deg) translateY(20px);
   }
 }
-
-
 
 /*
 .editor-container::after {
@@ -217,7 +247,7 @@
     width: 100%;
     overflow-x: hidden;
     height: 120px;
-    
+
 
     text-shadow: 0 0 30px #fc28a8;
 }
@@ -230,15 +260,15 @@
 }
 
 @keyframes cnt {
-    0% {  
+    0% {
         bottom: 150px;
         font-size: 0.1em;
-        color: #fc28a822;       
+        color: #fc28a822;
         text-shadow: 0 0 5px #fc28a811;
     }
     100% {
         bottom: -400px;
-        font-size: 20em;       
+        font-size: 20em;
         color: #fc28a855;
         text-shadow: 0 0 30px #fc28a8;
     }
